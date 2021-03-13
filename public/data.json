@@ -1,0 +1,63 @@
+{
+    "dayTime": [
+        {
+            "content": "점심 낙지볶음",
+            "created_at": "Sat, 13 Mar 2021 10:51:02 GMT",
+            "duration": 60,
+            "end_time": "2021-03-13 14:00:00",
+            "id": 3,
+            "memo": "낙곱새 먹음!",
+            "schedule_category_id": 2,
+            "start_time": "2021-03-13 13:00:00",
+            "user_id": 1
+        },
+        {
+            "content": "Myday 개발",
+            "created_at": "Sat, 13 Mar 2021 10:53:21 GMT",
+            "duration": 360,
+            "end_time": "2021-03-13 20:00:00",
+            "id": 4,
+            "memo": "디자인 추가 작업하고, 데이터베이스 마이그레이션!",
+            "schedule_category_id": 4,
+            "start_time": "2021-03-13 14:00:00",
+            "user_id": 1
+        }
+    ],
+    "evening": [],
+    "morning": [
+        {
+            "content": "해커톤 갈 준비",
+            "created_at": "Sat, 13 Mar 2021 10:03:14 GMT",
+            "duration": 60,
+            "end_time": "2021-03-13 09:00:00",
+            "id": 1,
+            "memo": "서울역 위워크로 감",
+            "schedule_category_id": 3,
+            "start_time": "2021-03-13 08:00:00",
+            "user_id": 1
+        },
+        {
+            "content": "빨래 정리",
+            "created_at": "Sat, 13 Mar 2021 11:29:26 GMT",
+            "duration": 30,
+            "end_time": "2021-03-13 09:30:00",
+            "id": 5,
+            "memo": "빨래 걷음",
+            "schedule_category_id": 3,
+            "start_time": "2021-03-13 09:00:00",
+            "user_id": 1
+        },
+        {
+            "content": "Myday 개발",
+            "created_at": "Sat, 13 Mar 2021 10:50:12 GMT",
+            "duration": 200,
+            "end_time": "2021-03-13 12:50:00",
+            "id": 2,
+            "memo": "모델링 하고, 디자인 함!",
+            "schedule_category_id": 4,
+            "start_time": "2021-03-13 09:30:00",
+            "user_id": 1
+        }
+    ],
+    "night": []
+}
