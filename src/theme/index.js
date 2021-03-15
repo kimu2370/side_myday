@@ -16,6 +16,10 @@ const theme = {
     desktop: `min-width: ${size.desktop}`,
 };
 
+export const color = {
+    basic: `#007AFF`,
+};
+
 export const iphone11 = {
     config: `
         max-width: 414px;

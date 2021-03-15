@@ -21,6 +21,7 @@ const Wrapper = styled.div`
 
 const ViewContainer = styled.div`
     ${iphone11.config};
+    height: 100%;
     position: relative;
     top: 50%;
     left: 50%;
