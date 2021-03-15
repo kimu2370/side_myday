@@ -16,11 +16,10 @@ const theme = {
     desktop: `min-width: ${size.desktop}`,
 };
 
-// min-height: 896px;
 export const iphone11 = {
     config: `
         max-width: 414px;
-        max-height: 896px
+        max-height: 896px;
     `,
 };
 

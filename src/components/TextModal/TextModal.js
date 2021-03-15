@@ -4,17 +4,15 @@ import styled from 'styled-components';
 import Modal from 'components/parts/Modal';
 import {Backdrop, Fade} from '@material-ui/core';
 
-const TextModal = ({open, clickedIndex, index, memo}) => {
-    const [closeModal, setCloseModal] = useState(false);
-
+const TextModal = ({open, setOpen, memo}) => {
     const handleCloseModal = useCallback(() => {
-        setCloseModal(false);
-    }, []);
+        setOpen(false);
+    }, [setOpen]);
 
     return (
         <Modal
-            open={open || closeModal}
-            onClose={() => setCloseModal(true)}
+            open={open}
+            onClose={handleCloseModal}
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
@@ -23,8 +21,8 @@ const TextModal = ({open, clickedIndex, index, memo}) => {
         >
             <Fade in={open}>
                 <Box>
+                    <TextBox>{memo || ''}</TextBox>
                     <CloseBtn onClick={handleCloseModal}>X</CloseBtn>
-                    <div>{memo || ''}</div>
                 </Box>
             </Fade>
         </Modal>
@@ -34,17 +32,30 @@ const TextModal = ({open, clickedIndex, index, memo}) => {
 export default TextModal;
 
 const Box = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    max-width: 372px;
+    width: 100%;
 `;
 
 const CloseBtn = styled.button`
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     cursor: pointer;
     border: none;
     outline: none;
     :hover {
         opacity: 0.8;
     }
+`;
+
+const TextBox = styled.div`
+    /* font-size: 1.5rem; */
+    padding: 2rem;
 `;

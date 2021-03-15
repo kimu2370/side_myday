@@ -1,14 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import ListBox from 'components/parts/ListBox';
+import ListBox from './ListBox';
 import axios from 'axios';
-
-// LisBox에 데이터 통신
-// moment(date_time).format('HH:mm');
 
 const LOCAL_HOST = process.env.REACT_APP_LOCAL_HOST;
 
-const List = () => {
+const ScheduleList = () => {
     const [data, setData] = useState({
         morning: [],
         dayTime: [],
@@ -17,7 +14,7 @@ const List = () => {
     });
 
     useEffect(() => {
-        axios.get(`${LOCAL_HOST}/schedule/1` || './data.json').then(res => {
+        axios.get('./data.json' || `${LOCAL_HOST}/schedule/1`).then(res => {
             setData(res.data);
         });
     }, []);
@@ -32,7 +29,7 @@ const List = () => {
     );
 };
 
-export default List;
+export default ScheduleList;
 
 const Wrapper = styled.div`
     max-height: 800px;

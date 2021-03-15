@@ -5,9 +5,12 @@ import moment from 'moment';
 import TextModal from 'components/TextModal';
 
 const ListBox = ({title, list}) => {
-    const [clickedIndex, setClickedIndex] = useState();
-    const handleClick = useCallback(clicked => {
-        setClickedIndex(clicked);
+    const [memo, setMemo] = useState('');
+    const [open, setOpen] = useState(false);
+    const modalHandler = useCallback(item => {
+        setOpen(true);
+        setMemo(item.memo);
+        // console.log(item.memo);
     }, []);
 
     return (
@@ -21,11 +24,11 @@ const ListBox = ({title, list}) => {
                             <Time>{`${moment(item.start_time).format('HH:mm')} - ${moment(
                                 item.end_time
                             ).format('HH:mm')}`}</Time>
-                            <Text onClick={() => handleClick(index)}>{item.content}</Text>
-                            <TextModal open={clickedIndex === index} memo={item.memo || ''} />
+                            <Text onClick={() => modalHandler(item)}>{item.content}</Text>
                         </ContentBox>
                     </ItemBox>
                 ))}
+                <TextModal open={open} setOpen={setOpen} memo={memo || ''} />
             </Wrapper>
         </Container>
     );
@@ -77,11 +80,17 @@ const Time = styled.div`
 `;
 
 const Text = styled.div`
+    cursor: pointer;
     font-weight: bold;
     font-size: 12px;
     line-height: 14px;
     background: rgba(0, 0, 0, 0.05);
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 6px 10px 5px 10px;
     width: 100%;
+    :hover {
+        transition: all 250ms ease;
+        transform: scale(1.02);
+        background: rgba(0, 0, 0, 0.1);
+    }
 `;
